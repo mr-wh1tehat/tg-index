@@ -1,3 +1,4 @@
+from app.views.upload_view import UploadView
 import base64
 import hashlib
 
@@ -27,6 +28,7 @@ class Views(
     LoginView,
     LogoutView,
     FaviconIconView,
+    UploadView,
 ):
     def __init__(self, client):
         self.client = client

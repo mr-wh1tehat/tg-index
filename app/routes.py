@@ -23,6 +23,7 @@ async def setup_routes(app, handler):
         web.post("/login", h.login_post, name="login_handle"),
         web.get("/logout", h.logout_get, name="logout"),
         web.get("/favicon.ico", h.faviconicon, name="favicon"),
+        web.get("/upload", h.upload_view, name=f"upload"),
     ]
 
     def get_common_routes(alias_id):
@@ -46,6 +47,7 @@ async def setup_routes(app, handler):
                 h.download_head,
                 name=f"download_head_{alias_id}",
             ),
+            
         ]
 
     if index_all:

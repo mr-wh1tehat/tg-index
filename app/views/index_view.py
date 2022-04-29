@@ -59,7 +59,7 @@ class IndexView:
                     thumbnail=f"/{alias_id}/{m.id}/thumbnail",
                     mime_type=m.file.mime_type,
                     filename=filename,
-                    insight=insight,
+                    insight=m.file.name,
                     human_size=get_human_size(m.file.size),
                     url=f"/{alias_id}/{m.id}/view",
                     download=f"{alias_id}/{m.id}/{filename}",

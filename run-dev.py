@@ -6,7 +6,7 @@ load_dotenv()  # take environment variables from .env.
 # Code of your application, which uses environment variables (e.g. from `os.environ` or
 # `os.getenv`) as if they came from the actual environment.
 
-# os.system("alias python3=python")
+# os.system("alias python=python3")
 
 
 def runSetup():
@@ -21,7 +21,7 @@ def runSetup():
         return
 
     session_string = os.getenv("SESSION_STRING")
-    if session_string is None:
+    if session_string in [None, "", " "]:
         os.system("python app/generate_session_string.py")
         alert(missing="SESSION_STRING")
         return
